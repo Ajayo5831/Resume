@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajay kumar | Web Developer</title>
+  </head>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap");
+    /* Variables */
+    :root {
+      --font-family: "Roboto", sans-serf;
+      --normal-font: 400;
+      --bold-font: 700;
+      --bolder-font: 900;
+      --bg-color: #fcfcfc;
+      --primary-color: #4756df;
+      --secondary-color: #ff7235;
+      --primary-shadow: #8b8eaf;
+      --secondary-shadow: #a17a69;
+      --bottom-margin: 0.5rem;
+      --bottom-margin-2: 1rem;
+      --line-height: 1.7rem;
+      --transition: 0.3s;
+    }
+    /* Variables end */
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* CSS Resets */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--primary-color);
+    }
+
+    a:hover {
+      color: var(--secondary-color);
+    }
+
+    body {
+      font-family: var(--font-family);
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 3.5rem;
+      background-color: var(--bg-color);
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    nav h1 {
+      color: var(--primary-color);
+    }
+
+    nav a {
+      color: var(--primary-color);
+      transition: var(--transition);
+    }
+    nav a:hover {
+      color: var(--secondary-color);
+      border-bottom: 2px solid var(--secondary-color);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.9rem;
+    }
+
+    nav ul li {
+      font-weight: var(--bold-font);
+    }
+    .burger-menu {
+      color: var(--primary-color);
+      font-size: 2rem;
+      border: 0;
+      background-color: transparent;
+      cursor: pointer;
+      display: none;
+    }
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      max-width: 68.75rem;
+      margin: auto;
+    }
+    .hero img {
+      height: 37.5rem;
+      width: 37.5rem;
+    }
+
+    .bio {
+      width: 25rem;
+      padding: 0.625rem;
+      border-radius: 6px;
+      box-shadow: 0px 2px 15px 2px var(--primary-shadow);
+    }
+
+    .bio h1 {
+      margin-bottom: var(--bottom-margin);
+    }
+
+    .bio p {
+      line-height: var(--line-height);
+      padding: 0.3rem 0;
+    }
+    .more-about {
+      background-color: var(--bg-color);
+      padding: 1rem 6rem;
+    }
+
+    .more-about h2 {
+      margin-bottom: var(--bottom-margin);
+      text-align: center;
+    }
+
+    .more-about p {
+      line-height: var(--line-height);
+      padding: 0.4rem;
+    }
+    .skills {
+      max-width: 68.75rem;
+      margin: auto;
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+
+    .skill-header {
+      margin-bottom: 1rem;
+    }
+
+    .skills-wrapper img {
+      padding: 1.25rem;
+    }
+
+    .icon {
+      width: 11.875rem;
+      height: 11.25rem;
+    }
+    .icon-card {
+      background-color: #fff;
+      border-radius: 11px;
+      box-shadow: 0 3px 10px var(--secondary-shadow);
+      padding: 20px;
+      margin: 10px;
+    }
+    .projects {
+      background-color: var(--bg-color);
+      padding: 32px 0;
+      margin-top: 2rem;
+    }
+
+    .project-pic {
+      width: 65%;
+      height: 60%;
+    }
+
+    .projects-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .projects-title {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .project-container {
+      text-align: center;
+      width: 21.875rem;
+      padding: 1rem;
+    }
+    .project-container p {
+      padding: 0.4rem;
+    }
+
+    .project-title {
+      margin-bottom: var(--bottom-margin);
+    }
+
+    .project-details {
+      margin-bottom: var(--bottom-margin);
+    }
+
+    .project-card {
+      background-color: #fff;
+      border-radius: 11px;
+      box-shadow: 0 3px 10px var(--primary-shadow);
+      padding: 20px;
+      margin: 10px;
+    }
+    .contact {
+      margin-top: 2rem;
+    }
+
+    .contact h2 {
+      text-align: center;
+      margin-bottom: var(--bottom-margin-2);
+    }
+
+    .contact-form-container {
+      max-width: 40.75rem;
+      margin: 0 auto;
+      padding: 0.938rem;
+      border-radius: 5px;
+      box-shadow: 0 3px 10px var(--secondary-shadow);
+    }
+    .contact-form-container label {
+      line-height: 2.7em;
+      font-weight: var(--bold-font);
+      color: var(--primary-color);
+    }
+
+    .contact-form-container textarea {
+      min-height: 6.25rem;
+      font-size: 14px;
+    }
+
+    .contact-form-container .input-field {
+      width: 100%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-radius: 5px;
+      border: none;
+      border: 2px outset var(--primary-color);
+      font-size: 0.875rem;
+      outline: none;
+    }
+    .input-field::placeholder {
+      padding: 0.5rem;
+      color: var(--primary-color);
+    }
+  </style>
+  <body>
+    <nav>
+      <h1>AJAY KUMAR</h1>
+      <ul class="navigation">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">contact</a></li>
+        <button class="burger-menu" id="burger-menu">
+          <ion-icon class="bars" name="menu-outline"></ion-icon>
+        </button>
+      </ul>
+    </nav>
+
+    <section class="hero" id="about">
+      <img
+        src="background.png"
+        alt="Ajay-kumar"
+        loading="lazy"
+        class="hero-img"
+      />
+      <div class="bio animate__animated animate__shakeX">
+        <h2 class="bio-title">About Me</h2>
+        <p class="bio-text">
+          Highly motivated and passionate Full Stack Developer seeking an
+          opportunity to leverage my skills in front-end and back-end
+          development to contribute to innovative projects. Eager to utilize my
+          knowledge of various programming languages, frameworks, and
+          technologies to develop efficient and scalable solutions.
+        </p>
+      </div>
+    </section>
+    <section class="more-about">
+      <h2>More About Me</h2>
+      <p>
+        Hey, this is my homepage, so I have to say something about myself.
+        Sometimes it is hard to introduce yourself because you know yourself so
+        well that you do not know where to start with. Let me give a try to see
+        what kind of image you have about me through my self-description. I hope
+        that my impression about myself and your impression about me are not so
+        different. Here it goes.
+      </p>
+    </section>
+    <section class="skills" id="skills">
+      <h2 class="skill-header">My Top Skills</h2>
+
+      <div class="skills-wrapper">
+        <div class="first-set animate__animated animate__pulse">
+          <img src="nodejs.png" alt="" loading="lazy" class="icon icon-card" />
+          <img
+            src="javascript.png"
+            alt=""
+            loading="lazy"
+            class="icon icon-card"
+          />
+          <img src="react.png" alt="" loading="lazy" class="icon icon-card" />
+        </div>
+
+        <div class="second-set animate__animated animate__pulse">
+          <img
+            src="html5-logo-31813.png"
+            alt=""
+            loading="lazy"
+            class="icon icon-card"
+          />
+          <img
+            src="bootstrap.png"
+            alt=""
+            loading="lazy"
+            class="icon icon-card"
+          />
+          <img
+            src="html5-logo-31821.png"
+            alt=""
+            loading="lazy"
+            class="icon icon-card"
+          />
+        </div>
+      </div>
+    </section>
+    <section class="projects" id="projects">
+      <h2 class="projects-title">Some of my Recent Projects</h2>
+      <div class="projects-container">
+        <div class="project-container project-card">
+          <img
+            src="pexels-tara-winstead-7111517.jpg"
+            alt="expense-tracker"
+            loading="lazy"
+            class="project-pic"
+          />
+          <h3 class="project-title">Expense Tracker</h3>
+          <p class="project-details">
+            Expense tracking is important in creating a budget for your small
+            business. Keeping a daily record of your expenses by tracking
+            receipts, invoices, and other outgoing expenses improves the
+            financial health of your budget. Tracking expenses can help you stay
+            on top of your cash flow and prepare you for tax season.
+          </p>
+          <a href="#" target="_blank" class="project-link">Check it Out</a>
+        </div>
+        <div class="project-container project-card">
+          <img
+            src="wevsite.jpg"
+            alt="netflic-clone"
+            loading="lazy"
+            class="project-pic"
+          />
+          <h3 class="project-title">E-commerce website</h3>
+          <p class="project-details">
+            An e-commerce website is a website that allows you to buy and sell
+            goods and services online. It's a platform where goods and services
+            are traded between buyers and sellers over the internet. Unlike a
+            physical storefront, an e-commerce website can be accessed at any
+            time, from anywhere, as long as there's an internet connection.
+          </p>
+          <a href="#" target="_blank" class="project-link">Check it Out</a>
+        </div>
+        <div class="project-container project-card">
+          <img
+            src="pexels-vlada-karpovich-4050347.jpg"
+            alt="task Manager"
+            loading="lazy"
+            class="project-pic"
+          />
+          <h3 class="project-title">Task Manager</h3>
+          <p class="project-details">
+            Task Manager, which was previously known as Microsoft Windows Task
+            Manager, is a component of the Windows operating system (OS) that
+            helps administrators and end users monitor, manage and troubleshoot
+            tasks. A task is a basic unit of programming that an OS controls. In
+            the context of Task Manager, a task might be an application, a
+            Windows process or a background process.
+          </p>
+          <a href="#" target="_blank" class="project-link">Check it Out</a>
+        </div>
+      </div>
+    </section>
+    <section class="contact" id="contact">
+      <h2>Get In Touch With Me</h2>
+      <div class="contact-form-container">
+        <div class="contact-form">
+          <form action="https://formspree.io/f/xyylngw" method="POST">
+            <div class="form-control">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="sender-name"
+                placeholder="Enter Your Name"
+                class="input-field"
+                required
+              />
+            </div>
+            <div class="form-control">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="sender-email"
+                placeholder="Enter Your Email"
+                class="input-field"
+                required
+              />
+            </div>
+            <div class="form-control">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                cols="60"
+                rows="10"
+                placeholder="Enter Your Message"
+                name="message"
+                class="input-field"
+                required
+              ></textarea>
+            </div>
+            <input
+              type="submit"
+              value="Submit"
+              id="submit-btn"
+              class="submit-btn"
+            />
+          </form>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
